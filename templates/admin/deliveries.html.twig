@@ -1,4 +1,4 @@
-{% extends "deliveries.html.twig" %}
+{% extends "admin.html.twig" %}
 
 {% form_theme delivery_import_form 'bootstrap_3_horizontal_layout.html.twig' %}
 {% if is_granted('ROLE_ADMIN') %}
@@ -7,24 +7,51 @@
 
 {% block content %}
 
-  <div class="d-flex justify-content-between mb-5">
-    <div id="search-deliveries" class="w-50">
-      <input type="text" class="form-control">
-    </div>
-    <div class="text-right">
-      <a href="#" class="btn btn-sm btn-default mr-4" data-toggle="modal" data-target="#import-deliveries-modal">
-        <i class="fa fa-upload"></i> {% trans %}basics.import{% endtrans %}
-      </a>
-      {% if is_granted('ROLE_ADMIN') %}
-      <a href="#" class="btn btn-sm btn-default mr-4" data-toggle="modal" data-target="#export-deliveries-modal">
-        <i class="fa fa-download"></i> {% trans %}basics.export{% endtrans %}
-      </a>
-      {% endif %}
-      <a href="#" class="btn btn-success" data-toggle="modal" data-target="#choose-store-modal">
-        <i class="fa fa-plus"></i> {% trans %}delivery.createNew{% endtrans %}
-      </a>
-    </div>
-  </div>
+<!--cette section permet de créer et d'importer des commandes -->
+    <section class="bg-danger d-flex p-4 text-center">
+      <div class="container custom-container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="description">
+            <h1 style="color: white;">Livraison</h1>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4">
+              {% if is_granted('ROLE_ADMIN') %}
+            <button type="button" class="m-3 btn btn-success" data-toggle="modal" data-target="#export-deliveries-modal">
+              <a class="text-white text-decoration-none" href=""><i class="fa fa-upload"></i> {% trans %}basics.export{% endtrans %}</a>
+            </button>
+              {% endif %}
+            <button type="button" class="m-3 btn btn-success" data-toggle="modal" data-target="#import-deliveries-modal">
+              <a class="text-white text-decoration-none" href=""><i class="fa fa-download"></i> {% trans %}basics.import{% endtrans %}</a>
+            </button>
+             <a href="#" class="btn m-3 btn-success" data-toggle="modal" data-target="#choose-store-modal">
+            <i class="fa fa-plus"></i> {% trans %}delivery.createNew{% endtrans %}
+          </a>
+          </div>
+        </div>
+      </div>
+    </section>
+         <!-- fin de la section form creation de commande -->
+    <div class="container-fluid m-5 d-flex justify-content-between">
+      <section class="dashboard-subnav bg-light p-5">
+        <form class="container" method="get" action="{{path('search_order')}}">
+          <div class="row ">
+            <div class="col-md-6">
+              <label for="deliveries_numero"><h3>{% trans %}basics.search{% endtrans %}</h3></label>
+              <input name="global_search" type="text" class="form-control" id="global_search" placeholder="#1789, customer, address...">
+            </div>
+            <div class="col-md-3">
+              <label for="date"><h3>{% trans %}form.time_slot_choice.start_time.label{% endtrans %}</h3></label>
+              <input name="date" type="date" class="form-control-sm input-short" id="date" placeholder="date">
+            </div>
+            <div class="col-md-2 d-flex justify-content-center" style="margin-top: 7vh;">
+              <button class="btn  btn-lg btn-primary" type="submit">{% trans %}basics.search{% endtrans %}</button>
+            </div>
+          </div>
+        </form>
+      </section>
+   </div>
 
   {% if delivery_import_form.vars.submitted and (not delivery_import_form.vars.valid and not delivery_import_form.file.vars.valid) %}
     <div class="alert alert-danger">

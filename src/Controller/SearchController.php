@@ -64,6 +64,27 @@ class SearchController extends AbstractController
         return new JsonResponse(['hits' => $hits]);
     }
 
+    // barre de recherche de la page de livraison 
+    /**
+     * @Route("/search/customer", name="search_order" )
+     */
+        public function OrderAction (
+        Request $request, 
+        Client $client,
+        UrlGeneratorInterface $urlGenerator) { 
+            //permet de traduire la recherche en fonction de la langue utilisé
+            $locale = $request->getLocale();
+            // Récupération des valeurs des champs de recherche
+        $searchering = $request->query->get('global_search');
+        $date = $request->query->get('date');
+        // TODO : Traitement des valeurs et exécution de la recherche
+
+        dump($searchering); //permet d'afficher ce que contient l'objet request ->permet d'aller chercher les quelques informations qui nous sont utiles 
+        // Renvoi d'une réponse vide pour l'exemple
+        return $this->render('deliveries.html.twig');
+        // afficher ensuite le résultat dans le tableau
+        }
+
     /**
      * @Route("/search/deliveries", name="search_deliveries")
      */
@@ -98,6 +119,8 @@ class SearchController extends AbstractController
         $search->disconnect();
 
         $ids = array_filter($ids);
+
+        //vérifie si le tableau est vide 
 
         if (count($ids) === 0) {
             return new JsonResponse(['hits' => []]);

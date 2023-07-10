@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modif Deliveries</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+   
+  </head>
+<body>
+  <header class="header flex">
+    <nav class="navbar">
+      <div class="flex gap1">
+        <div class="header__coop gap flex">
+          <img class="header__coop__logo" src="images/logo_coopcycle.png" alt="logo coopcycle livraison">
+          <a class="header__coop__logo__cta cta" href="#">CoopCycle</a>
+          <select class="header__coop__logo__cta__btn" name="Tartampion">
+            <option value="Tartampion">Tartampion</option>
+            <option value="Shiffield Vegan Cafe Test">Shiffield Vegan Cafe Test</option>
+            <option value="Manger seine">Manger seine</option>
+          </select>
+          <a href="page_à_modifier" class="header__coop__logo__cta__btn__btn-modifier cta">Modifier</a>
+        </div>
+        <div class="left flex gap">
+          <!-- <a href="page_à_modifier" class="left__cta cta">derecciones guardadas</a> -->
+          <a href="/dashboard/stores/32/addresses" class="left__cta cta">
+            <i class="fa-regular fa-address-book"></i>
+          <span>Derecciones guardadas</span>
+          </a>
+          <button type="button" class="left__cta__btn">
+            <span class="">+99</span>
+          </button>
+          <a href="page_à_modifier" class="left__cta cta">
+            <i class="fa-light fa-right-from-bracket"></i>
+            <span>Retour sur le site</span></a>
+        </div>
+      </div>
+    </nav>           
+  </header>
+
+
+  <main>
+    
+
+    <section class="bg-danger d-flex py-2 text-center">
+      <div class="container custom-container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="description">
+              <p>Entregas</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn btn-primary">
+              <a class="text-white text-decoration-none" href="">Crear</a>
+            </button>
+            <button type="button" class="btn btn-primary">
+              <a class="text-white text-decoration-none" href="">Importar</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <div class="d-flex justify-content-center bg-light">
+      <section class="dashboard-subnav bg-light py-5">
+        <form class="container">
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="formGroupExampleInput1">Nombre de cliente</label>
+              <input type="text" class="form-control form-control-sm input-short" id="formGroupExampleInput1" placeholder="12">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="formGroupExampleInput2">Direction</label>
+              <input type="text" class="form-control form-control-sm input-short" id="formGroupExampleInput2" placeholder="direction">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="formGroupExampleInput3">Numéro de commande</label>
+              <input type="text" class="form-control form-control-sm input-short" id="formGroupExampleInput3" placeholder="#">
+            </div>
+            <div class="col-md-3 mb-3 d-flex">
+              <div>
+                <label for="date">Date</label>
+                <input type="date" class="form-control form-control-sm input-short" id="date" placeholder="12/03/2023">
+              </div>
+              <div class="ml-2 mt-2 p-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+    
+
+    
+     <!-- fin de la section form creation de commande -->
+    
+    <section class="section-space"></section>
+    
+    <!-- espace entre mes sections -->
+
+  <div class="d-flex justify-content-center">
+    <section class="section custom-container ">
+      <h1 class="section__title">Hoy</h1>
+      <p class="section__description">Ningun elemento por el momento</p>
+      <h1 class="section__title">Próximo</h1>
+      <p class="section__description">Ningun elemento por el momento</p>
+      <table class="table table-condensed">
+        <tr >
+          <td>
+  
+          </td>
+        </tr>
+        <tr>
+      </table>
+      <table class="table table-condensed">
+        <thead>
+            <th>#</th>
+            <th></th>
+            <th>Résumé</th>
+            <th>Entregas</th>
+            <th></th>
+            <th></th>
+            <th>Mansajeros</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="text-center">
+              <select class="" id="stores">
+                <option></option>
+                <option value="La más nueva primero">Achetez A</option>
+                <option value="/admin/stores/26/deliveries/new">BIO</option>
+                <!-- ... -->
+                <option value="/admin/stores/61/deliveries/new">Zora Boxes</option>
+              </select>  
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="/admin/deliveries/5338">#5338</a>
+            </td>
+            <td width="20%">
+              <a href="/admin/deliveries?sort=d.createdAt&amp;direction=desc&amp;filterField=s.id&amp;filterValue=75">
+                KM1
+              </a>
+            </td>
+            <td width="40%">
+              <ul class="list-unstyled">
+                <li>
+                  <sm  input-shortall>
+                    <span class="mr-1"><i class="fa fa-cube"></i></span>
+                    <span>
+                      Rue de la Terre Victoria, 35760 Saint-Grégoire
+                    </span>
+                  </sm  input-shortall>
+                </li>
+                <li>
+                  <sm  input-shortall>
+                    <span class="mr-1"><i class="fa fa-cube"></i></span>
+                    <span>
+                      Lieu Dit Vittoria, 09130 Le Fossat
+                    </span>
+                  </sm  input-shortall>
+                </li>
+                <li>
+                  <sm  input-shortall>
+                    <span class="mr-1"><i class="fa fa-arrow-down"></i></span>
+                    <span>
+                      Zapatari Kalea 4, 01001 Gasteiz
+                    </span>
+                  </sm  input-shortall>
+                </li>
+              </ul>
+              <sm  input-shortall>989.82 km - 0.00 kg</sm  input-shortall>
+            </td>
+            <td width="10%">
+              <sm  input-shortall>
+                23/05/2023 14:00
+              </sm  input-shortall>
+            </td>
+            <td width="10%"></td>
+            <td class="text-center">
+              <a href="/admin/orders/11486"></a>
+            </td>
+            <!-- <td class="text-center"></td> -->
+            <td class="text-center" width="10%">
+              <sm  input-shortall class="text-muted">il y a 3 heures</sm  input-shortall>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-center"></td>
+            <td class="text-right">
+              <a href="/admin/deliveries/5338">Voir</a>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/admin/deliveries/5338">#5338</a>
+            </td>
+            <td width="20%">
+              <a href="/admin/deliveries?sort=d.createdAt&amp;direction=desc&amp;filterField=s.id&amp;filterValue=75">
+                KM1
+              </a>
+            </td>
+            <td width="40%">
+              <ul class="list-unstyled">
+                <li>
+                  <sm  input-shortall>
+                    <span class="mr-1"><i class="fa fa-cube"></i></span>
+                    <span>
+                      Rue de la Terre Victoria, 35760 Saint-Grégoire
+                    </span>
+                  </sm  input-shortall>
+                </li>
+                <li>
+                  <sm  input-shortall>
+                    <span class="mr-1"><i class="fa fa-cube"></i></span>
+                    <span>
+                      Lieu Dit Vittoria, 09130 Le Fossat
+                    </span>
+                  </sm  input-shortall>
+                </li>
+                <li>
+                  <sm  input-shortall>
+                    <span class="mr-1"><i class="fa fa-arrow-down"></i></span>
+                    <span>
+                      Zapatari Kalea 4, 01001 Gasteiz
+                    </span>
+                  </sm  input-shortall>
+                </li>
+              </ul>
+              <sm  input-shortall>989.82 km - 0.00 kg</sm  input-shortall>
+            </td>
+            <td width="10%">
+              <sm  input-shortall>
+                23/05/2023 14:00
+              </sm  input-shortall>
+            </td>
+            <td width="10%"></td>
+            <td class="text-center">
+              <a href="/admin/orders/11486"></a>
+            </td>
+            <!-- <td class="text-center"></td> -->
+            <td class="text-center" width="10%">
+              <sm  input-shortall class="text-muted">il y a 3 heures</sm  input-shortall>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-center"></td>
+            <td class="text-right">
+              <a href="/admin/deliveries/5338">Voir</a>
+            </td>
+            <td></td>
+          </tr>
+            <tr>
+              <td>
+                <a href="/admin/deliveries/5329">#5329</a>
+              </td>
+              <td width="20%">
+                <a href="/admin/deliveries?sort=d.createdAt&amp;direction=desc&amp;filterField=s.id&amp;filterValue=75">
+                  KM1
+                </a>
+              </td>
+              <td width="40%">
+                <ul class="list-unstyled">
+                  <li>
+                    <sm  input-shortall>
+                      <span class="mr-1"><i class="fa fa-cube"></i></span>
+                      <span>
+                        Lieu Dit Vittoria, 09130 Le Fossat
+                      </span>
+                    </sm  input-shortall>
+                  </li>
+                  <li>
+                    <sm  input-shortall>
+                      <span class="mr-1"><i class="fa fa-cube"></i></span>
+                      <span>
+                        Rue de la Terre Victoria, 35760 Saint-Grégoire
+                      </span>
+                    </sm  input-shortall>
+                  </li>
+                  <li>
+                    <sm  input-shortall>
+                      <span class="mr-1"><i class="fa fa-arrow-down"></i></span>
+                      <span>
+                        Zapatari Kalea 4, 01001 Gasteiz
+                      </span>
+                    </sm  input-shortall>
+                  </li>
+                </ul>
+                <sm  input-shortall>1,318.55 km - 0.01 kg</sm  input-shortall>
+              </td>
+              <td width="10%">
+                <sm  input-shortall>
+                  19/05/2023 16:00
+                </sm  input-shortall>
+              </td>
+              <td width="10%"></td>
+              <td class="text-center">
+                <a href="/admin/orders/11478">
+                  @admin
+                </a>
+              </td>
+              <!-- <td class="text-center">
+                <a href="/admin/orders/11475"></a>
+              </td> -->
+              <!-- <td class="text-center"></td> -->
+              <td class="text-center" width="10%">
+                <sm  input-shortall class="text-muted">il y a 4 jours</sm  input-shortall>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text-center"></td>
+              <td class="text-right">
+                <a href="/admin/deliveries/5329">Voir</a>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <a href="/admin/deliveries/5328">#5328</a>
+              </td>
+              <td width="20%">
+                <a href="/admin/deliveries?sort=d.createdAt&amp;direction=desc&amp;filterField=s.id&amp;filterValue=75">
+                  KM1
+                </a>
+              </td>
+              <td width="40%">
+                <ul class="list-unstyled">
+                  <li>
+                    <sm  input-shortall>
+                      <span class="mr-1"><i class="fa fa-cube"></i></span>
+                      <span>
+                        Lieu Dit Vittoria, 09130 Le Fossat
+                      </span>
+                    </sm  input-shortall>
+                  </li>
+                  <li>
+                    <sm  input-shortall>
+                      <span class="mr-1"><i class="fa fa-cube"></i></span>
+                      <span>
+                        Rue de la Terre Victoria, 35760 Saint-Grégoire
+                      </span>
+                    </sm  input-shortall>
+                  </li>
+                  <li>
+                    <sm  input-shortall>
+                      <span class="mr-1"><i class="fa fa-arrow-down"></i></span>
+                      <span>
+                        Zapatari Kalea 4, 01001 Gasteiz
+                      </span>
+                    </sm  input-shortall>
+                  </li>
+                </ul>
+                <sm  input-shortall>1,318.55 km - 0.75 kg</sm  input-shortall>
+              </td>
+              <td width="10%">
+                <sm  input-shortall>
+                  19/05/2023 14:00
+                </sm  input-shortall>
+              </td>
+              <td width="10%"></td>
+              <td class="text-center">
+                <a href="/admin/orders/11478">
+                  @admin
+                </a>
+              </td>
+              <!-- <td class="text-center"></td> -->
+              <td class="text-center" width="10%">
+                <sm  input-shortall class="text-muted">il y a 4 jours</sm  input-shortall>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text-center"></td>
+              <td class="text-right">
+                <a href="/admin/deliveries/5328">Voir</a>
+              </td>
+              <td></td>
+            </tr>
+          </table>            
+               
+     </section>
+    </div>
+
+  </main>
+  <footer>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
