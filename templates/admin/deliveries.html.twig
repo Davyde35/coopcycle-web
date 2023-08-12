@@ -7,9 +7,8 @@
 
 {% block content %}
 
-<!--cette section permet de créer et d'importer des commandes -->
-    <section class="bg-danger d-flex p-4 text-center">
-      <div class="container custom-container">
+    <section>
+      <div class="text-center p-4 bg-danger custom-container">
         <div class="row">
           <div class="col-md-6">
             <div class="description">
@@ -31,28 +30,31 @@
           </div>
         </div>
       </div>
-    </section>
-         <!-- fin de la section form creation de commande -->
-    <div class="container-fluid m-5 d-flex justify-content-between">
-      <section class="dashboard-subnav bg-light p-5">
-        <form class="container" method="get" action="{{path('search_order')}}">
+      <div class=""></div>
+         
+    <div class=" text-center custom-container">
+     <div class="row  bg-light">
+      <form class="container" method="get" action="{{path('search_order')}}">
           <div class="row ">
             <div class="col-md-6">
               <label for="deliveries_numero"><h3>{% trans %}basics.search{% endtrans %}</h3></label>
-              <input name="global_search" type="text" class="form-control" id="global_search" placeholder="#1789, customer, address...">
+              <input name="search_order" type="text" class="form-control" id="search_order" placeholder="#1789, customer, address...">
             </div>
-            <div class="col-md-3">
-              <label for="date"><h3>{% trans %}form.time_slot_choice.start_time.label{% endtrans %}</h3></label>
-              <input name="date" type="date" class="form-control-sm input-short" id="date" placeholder="date">
-            </div>
-            <div class="col-md-2 d-flex justify-content-center" style="margin-top: 7vh;">
-              <button class="btn  btn-lg btn-primary" type="submit">{% trans %}basics.search{% endtrans %}</button>
+              <div class="col-md-3">
+              <label id="search_datepicker" for="date"><h3>{% trans %}form.time_slot_choice.start_time.label{% endtrans %}</h3></label>
+              <div id="search_deliveries_datepicker_widget"></div>
+              <input type="text" id="search_deliveries_datepicker_before"></input>
+              <input type="text" id="search_deliveries_datepicker_after"></input>
+              </div>
+             <div class="col-md-2 d-flex justify-content-center" style="margin-top: 6vh;">
+              <button class="btn mb-4 btn-lg btn-primary" type="submit">{% trans %}basics.search{% endtrans %}</button>
             </div>
           </div>
         </form>
-      </section>
-   </div>
-
+     </div>
+    </div>
+    </section>
+     
   {% if delivery_import_form.vars.submitted and (not delivery_import_form.vars.valid and not delivery_import_form.file.vars.valid) %}
     <div class="alert alert-danger">
       <ul class="list-unstyled">
@@ -66,9 +68,7 @@
   {% if delivery_export_form.vars.submitted and not delivery_export_form.vars.valid %}
     {{ form_errors(delivery_export_form) }}
   {% endif %}
-
   {# {% include '_partials/delivery/list.html.twig' with { with_store: true, with_order: true } %} #}
-
   <h3>{{ 'basics.today'|trans }}</h3>
   {% include '_partials/delivery/list.html.twig' with { deliveries: today, with_store: true, with_order: true } %}
 
@@ -76,7 +76,6 @@
   {% include '_partials/delivery/list.html.twig' with { deliveries: upcoming, with_store: true, with_order: true } %}
 
   <hr>
-
   <div class="d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center mt-4 mb-3">
       <h3 class="m-0 mr-4">{{ 'deliveries.section.past'|trans }}</h3>
@@ -179,4 +178,18 @@ $('#stores').on('change', function(e) {
   window.location.href = $(this).val();
 });
 </script>
+
+<script>
+new CoopCycle.DateRangePicker(document.querySelector('#search_deliveries_datepicker_widget'), {
+  defaultValue: "{}",
+  onChange: function(dates) { //dates contient deux objets, after et before dans daterange
+  
+    if (dates) {
+      document.querySelector('#search_deliveries_datepicker_before').value =  dates.after.format('YYYY-MM-DD')
+      document.querySelector('#search_deliveries_datepicker_after').value =  dates.after.format('YYYY-MM-DD')
+    }
+  }
+});
+</script>
+
 {% endblock %}

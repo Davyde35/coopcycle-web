@@ -64,7 +64,7 @@ class SearchController extends AbstractController
         return new JsonResponse(['hits' => $hits]);
     }
 
-    // barre de recherche de la page de livraison 
+    
     /**
      * @Route("/search/customer", name="search_order" )
      */
@@ -75,7 +75,7 @@ class SearchController extends AbstractController
             //permet de traduire la recherche en fonction de la langue utilisé
             $locale = $request->getLocale();
             // Récupération des valeurs des champs de recherche
-        $searchering = $request->query->get('global_search');
+        $searchering = $request->query->get('search_order');
         $date = $request->query->get('date');
         // TODO : Traitement des valeurs et exécution de la recherche
 
